@@ -14,5 +14,13 @@
         </label>
         <button>등록</button>
     </form>
+
+    <form action="delete">
+        <label>
+            번호 :
+            <input type="text" name="id">
+        </label>
+        <button>삭제</button>
+    </form>
 </body>
 </html>

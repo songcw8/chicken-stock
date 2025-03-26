@@ -36,4 +36,13 @@ public class AccountRepository implements JDBCRepository {
             System.out.println("Rows affected: " + rowsAffected);
         }
     }
+
+    public void delete(long id) throws Exception {
+        try (Connection conn = getConnection(URL, USER, PASSWORD)) {
+            Statement stmt = conn.createStatement();
+            String query = "DELETE FROM accounts WHERE account_id = %d".formatted(id);
+            int rowsAffected = stmt.executeUpdate(query);
+            System.out.println("Rows affected: " + rowsAffected);
+        }
+    }
 }
